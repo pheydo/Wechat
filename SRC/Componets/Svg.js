@@ -57,6 +57,29 @@ import Svg, { Rect, Path } from "react-native-svg"
   )
 }
 
-export { SvgAppLogo, SvgGoogleLogo};
+const SvgArrowback = (props)=> {
+  return (
+    <Svg
+      width={30}
+      height={30}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <Path
+        d="M19 12H5M12 19l-7-7 7-7"
+        stroke="#8E8E8E"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  )
+}
+
+
+
+export { SvgAppLogo, SvgGoogleLogo, SvgArrowback };
 
 

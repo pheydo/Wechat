@@ -58,9 +58,9 @@ Policy and Cookies <Text style={styles.link} onPress={handleLinkPress}> Policy.<
       <Text style={styles.GoogleLoginText}>Login with Google</Text> 
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.buttonContainer}>
+      <TouchableOpacity   onPress={() =>navigation.navigate("Loginwithphone")} style={styles.buttonContainer}>
       <SvgGoogleLogo style={styles.SvgGoogleLogo} /> 
-      <Text style={styles.GoogleLoginText} onPress={() =>navigation.navigate("Loginwithphone")}>Login with phone</Text> 
+      <Text style={styles.GoogleLoginText}>Login with phone</Text> 
       </TouchableOpacity>
       </View>
 
