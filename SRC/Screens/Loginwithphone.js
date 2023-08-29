@@ -1,26 +1,24 @@
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import React from 'react'
-import { SvgArrowback } from '../../SRC/Componets/Svg'
+// import React from 'react';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Dimensions } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { SvgArrowback } from '../../SRC/Componets/Svg';
+
+const windowWidth = Dimensions.get('window').width;
 
 const Loginwithphone = ({ placeholder, navigation }) => {
   return (
-    <SafeAreaView style={{ flex: 1, marginHorizontal: 10 }}>
+    <SafeAreaView style={{ flex: 1, marginHorizontal: 0.05 * windowWidth }}>
       <View>
-        <SvgArrowback onPress={() => navigation.goBack()}/>
+        <SvgArrowback onPress={() => navigation.goBack()} />
       </View>
 
       <View style={styles.MynumberTextView}>
-        <Text style={styles.MynumberText} onPress={() => navigation.navigate("Countrypicker")}>My number is</Text>
+        <Text style={styles.MynumberText} onPress={() => navigation.navigate('Countrypicker')}>
+          My number is
+        </Text>
       </View>
 
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          marginTop: 50,
-        }}
-      >
+      <View style={styles.inputContainer}>
         <TextInput
           style={styles.inputcountrycode}
           placeholder={placeholder}
@@ -31,69 +29,72 @@ const Loginwithphone = ({ placeholder, navigation }) => {
           style={styles.inputnumber}
           placeholder={placeholder}
           placeholderTextColor="red"
+          keyboardType="numeric"
         />
       </View>
 
-      <View style={{marginTop:50}}>
-        <Text style={styles.LoginwithphoneText} >
-          By clicking Log In, you agree with our Terms. Learn how process your
-          data in our Privacy Policy and Cookies Policy. By clicking Log In, you
-          agree with our Terms. Learn how process your data in our Privacy
-          Policy and Cookies
+      <View style={{ marginTop: 0.1 * windowWidth }}>
+        <Text style={styles.LoginwithphoneText}>
+          By clicking Log In, you agree with our Terms. Learn how process your data in our Privacy
+          Policy and Cookies Policy. By clicking Log In, you agree with our Terms. Learn how
+          process your data in our Privacy Policy and Cookies
         </Text>
       </View>
 
-      <TouchableOpacity style={styles.buttonContainer}>
-      
-      <Text style={styles.GoogleLoginText}>Login with Google</Text> 
+      <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Otpscreen')}>
+        <Text style={styles.GoogleLoginText}>continue</Text>
       </TouchableOpacity>
-
     </SafeAreaView>
-  )
-}
-
-export default Loginwithphone
+  );
+};
 
 const styles = StyleSheet.create({
   MynumberText: {
-    fontSize: 35,
-    marginLeft: 40,
+    fontSize: 0.07 * windowWidth,
+    marginLeft: 0.1 * windowWidth,
   },
-  MynumberTextView: { marginTop: 40 },
+  MynumberTextView: { marginTop: 0.2 * windowWidth },
 
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 0.14 * windowWidth,
+  },
   inputnumber: {
-    borderWidth: 0, // This removes the border of the TextInput itself
-    height: 30,
+    borderWidth: 0,
+    height: 0.04 * windowWidth,
     color: 'black',
     borderBottomWidth: 1,
-    width: 220,
-    marginLeft: 10,
+    width: 0.5 * windowWidth,
+    marginLeft: 0.02 * windowWidth,
   },
   inputcountrycode: {
-    borderWidth: 0, // This removes the border of the TextInput itself
-    height: 30,
+    borderWidth: 0,
+    height: 0.04 * windowWidth,
     color: 'black',
     borderBottomWidth: 1,
-    width: 50,
-    marginLeft: 10,
+    width: 0.15 * windowWidth,
+    marginLeft: 0.02 * windowWidth,
   },
 
-  LoginwithphoneText:{
-    alignSelf:"center"
+  LoginwithphoneText: {
+    alignSelf: 'center',
+    lineHeight: 0.05 * windowWidth,
   },
   buttonContainer: {
-    height: 70,
+    height: 0.12 * windowWidth,
     borderWidth: 1,
-    marginTop: 80,
-    paddingHorizontal: 10,
-    borderRadius: 30,
+    marginTop: 0.1 * windowWidth,
+    paddingHorizontal: 0.04 * windowWidth,
+    borderRadius: 0.15 * windowWidth,
     backgroundColor: '#AA3FEC',
-    justifyContent:"center"
-    
+    justifyContent: 'center',
   },
-  GoogleLoginText:{
-    alignSelf:"center",
-    fontSize:20,
-    color:"white"
+  GoogleLoginText: {
+    alignSelf: 'center',
+    fontSize: 0.04 * windowWidth,
+    color: 'white',
   },
-})
+});
+
+export default Loginwithphone;

@@ -5,6 +5,7 @@ import LoginScreen from "../../SRC/Screens/LoginScreen";
 import Signup from "../Screens/Signup";
 import Loginwithphone from "../../SRC/Screens/Loginwithphone"
 import Countrypicker from "../../SRC/Componets/Countrypicker"
+import Otpscreen from "../../SRC/Screens/Otpscreen";
 
 
 const Stack = createNativeStackNavigator();
@@ -24,7 +25,7 @@ const MyStack = () => {
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="Loginwithphone" component={Loginwithphone} />
-      <Stack.Screen name="Countrypicker" component={Countrypicker} />
+      <Stack.Screen name="Otpscreen" component={Otpscreen} />
       <Stack.Screen name="Bottomnavigation" component={Bottomnavigation} />
     </Stack.Navigator>
   );
