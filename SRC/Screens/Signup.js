@@ -1,117 +1,56 @@
-import React, { useState } from 'react'
-import {
-  View,
-  Button,
-  StyleSheet,
-  KeyboardAvoidingView,
-  Text,
-  Dimensions,
-  TouchableOpacity,
-  Linking 
-} from 'react-native'
-import { SvgAppLogo, SvgGoogleLogo } from '../../SRC/Componets/Svg'
+// import React, { useState } from 'react';
+// import { View, StyleSheet } from 'react-native';
+// import { Input, Button, Text, Picker } from 'react-native-elements';
 
-const Signup = ({navigation}) => {
-  const { width, height } = Dimensions.get('window')
-  const containerWidth = width >= 768 ? '100%' : '100%'
-  const containerHeight = height >= 1024 ? '50%' : '30%'
+// export default function Signup() {
+
+//   const [fullName, setFullName] = useState('');
+//   const [gender, setGender] = useState('');
+//   const [dateOfBirth, setDateOfBirth] = useState('');
+//   const [phoneNumber, setPhoneNumber] = useState('');
+
+//   // const handleSignup = () => {
+//   //   // Add your signup logic here
+//   //   // You can use the state variables (fullName, gender, dateOfBirth, phoneNumber) to send data to your backend or perform any other actions.
+//   // };
   
-  const handleLinkPress = () => {
-    // Replace 'https://www.example.com' with the desired URL
-    Linking.openURL('https://www.example.com');
-  };
+//   return (
+//     <View style={styles.container}>
+//       <Text h3>Signup</Text>
+//       <Input
+//         label="Full Name"
+//         placeholder="Enter your full name"
+//         value={fullName}
+//         onChangeText={setFullName}
+//       />
+//       <Input
+//         label="Date of Birth"
+//         placeholder="YYYY-MM-DD"
+//         value={dateOfBirth}
+//         onChangeText={setDateOfBirth}
+//       />
+//       <Input
+//         label="Phone Number"
+//         placeholder="Enter your phone number"
+//         value={phoneNumber}
+//         onChangeText={setPhoneNumber}
+//       />
+//       <Picker
+//         label="Gender"
+//         selectedValue={gender}
+//         onValueChange={(itemValue) => setGender(itemValue)}
+//       >
+//         <Picker.Item label="Select Gender" value="" />
+//         <Picker.Item label="Male" value="male" />
+//         <Picker.Item label="Female" value="female" />
+//         <Picker.Item label="Other" value="other" />
+//       </Picker>
+//       <Button title="Signup" onPress={handleSignup} />
+//     </View>
+//   )
+// }
 
+// const styles = StyleSheet.create({
+// container:{justifyContent:"center", flex:1, marginHorizontal:20,}
 
-  return (
-    <View
-      style={[styles.container, { width:containerWidth }]}
-      behavior="padding"
-    >
-      <View style={styles.svgWelcomePic}>
-        <SvgAppLogo />
-      </View>
-
-      <View style={styles.SignupTextView}>
-        <Text style={styles.SignupText} >
-           By clicking Log In, you agree with our <Text style={styles.link} onPress={handleLinkPress}>Terms.</Text> 
-       </Text>
-     
-     
-        <Text style={styles.SignupText}>
-Learn how we process your data in our <Text style={styles.link} onPress={handleLinkPress}> Privacy.</Text> 
-</Text>
-      
-        <Text style={styles.SignupText} >
-Policy and Cookies <Text style={styles.link} onPress={handleLinkPress}> Policy.</Text> 
-</Text>
-      </View>
-
-
-<View style={styles.buttonView}>
-      <TouchableOpacity style={styles.buttonContainer}>
-      <SvgGoogleLogo style={styles.SvgGoogleLogo} /> 
-      <Text style={styles.GoogleLoginText}>Login with Google</Text> 
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.buttonContainer}>
-      <SvgGoogleLogo style={styles.SvgGoogleLogo} /> 
-      <Text style={styles.GoogleLoginText}>Login with Google</Text> 
-      </TouchableOpacity>
-
-      <TouchableOpacity   onPress={() =>navigation.navigate("Loginwithphone")} style={styles.buttonContainer}>
-      <SvgGoogleLogo style={styles.SvgGoogleLogo} /> 
-      <Text style={styles.GoogleLoginText}>Login with phone</Text> 
-      </TouchableOpacity>
-      </View>
-
-      <View>    
-        <Text style={styles.SignupText} >Don’t have account? <Text>Signup</Text> </Text>
-      </View>
-    </View>
-    
-  )
-}
-export default Signup
-
-const styles = StyleSheet.create({
-  svgWelcomePic: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginVertical: 150,
-  },
-
-  
-
-  container: {
-    alignItems: 'center',
-    flex: 1,
-    backgroundColor: '#AA3FEC',
-  },
-
-  buttonContainer: {
-    flexDirection:'row',
-    height: 70,
-    
-    borderWidth: 1,
-    marginBottom: 10,
-    paddingHorizontal: 10,
-    borderRadius: 30,
-    backgroundColor: 'white',
-    
-  },
-  buttonView:{ marginVertical:20, width:"95%"},
-
-  GoogleLoginText:{
-    alignSelf:"center",
-    fontSize:20,
-    marginHorizontal:40
-    
-  },
-  SvgGoogleLogo:{alignSelf:"center",
-  marginHorizontal:10
-},
-link:{textDecorationLine: 'underline',},
-SignupTextView:{marginVertical:20,justifyContent:"center"},
-SignupText:{alignSelf:"center", color:"white"}
-
-})
+// })

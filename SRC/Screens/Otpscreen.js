@@ -31,7 +31,7 @@ const Otpscreen = ({navigation}) => {
           <TextInput
             key={index}
             style={styles.input}
-            placeholder={`Input ${index + 1}`}
+           
             keyboardType="numeric"
             maxLength={1}
             ref={(ref) => handleRef(ref, index)}
